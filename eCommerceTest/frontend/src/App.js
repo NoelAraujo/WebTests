@@ -1,17 +1,19 @@
 // import logo from './logo.svg';
 // import './App.css';
+import Product from './components/Product';
 import data from './data';
+
 function App() {
   return (
     <div className="grid-container">
         {/* coloco logo da loja na direita e botões de acesso na esquerda */}
         <header className="row"> 
             <div className="brand"> 
-                <a href="index.html">Lojinha</a>
+                <a href="/">Lojinha</a>
             </div>
             <div>
-                <a href="cart.html">Carrinho</a>
-                <a href="signin.html">Cadastre</a>
+                <a href="/cart">Carrinho</a>
+                <a href="/signin">Cadastre</a>
             </div>
         </header>
    
@@ -21,28 +23,7 @@ function App() {
             <div className="row center">
               {
                 data.products.map(product =>( 
-                      <div key={product._id} className="card">
-                        <a href={`product/${product._id}`}>
-                            {/* image size should be 680px by 830px  */}
-                            <img className="medium" src={product.image} alt={product.name}></img>
-                            
-                        </a>
-                        <div className="card-body">
-                            <a href={`product/${product._id}`}>
-                                <h2>{product.name}</h2>
-                            </a>
-                        </div>
-                        <div className="rating">
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                        </div>
-                        <div className="price">
-                            R$ {product.price}
-                        </div>
-                    </div>
+                      <Product key={product._id} product={product}></Product>
                 ))
               }
                 

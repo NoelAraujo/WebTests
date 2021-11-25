@@ -113,3 +113,6 @@ img.medium {
   color: #f0c040;
   margin: 0.1rem;
 }
+.rating span:last-child { /* Change the color of the number of reviwers*/
+  color: #404040;
+}
